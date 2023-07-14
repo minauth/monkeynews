@@ -25,100 +25,41 @@ const App = () => {
               <News
                 setProgress={setProgress}
                 apiKey={apiKey}
-                key="general"
+                key="cosmetics"
                 max={max}
                 country="ru"
-                category="general"
-                viewCategory="всем"
+                category="косметика"
+                viewCategory="косметике"
               />
             }
           />
           <Route
             exact
-            path="/business"
+            path="/beauty"
             element={
               <News
                 setProgress={setProgress}
                 apiKey={apiKey}
-                key="business"
+                key="beauty"
                 max={max}
                 country="ru"
-                category="business"
-                viewCategory="бизнесе"
+                category="beauty"
+                viewCategory="красоте"
               />
             }
           />
           <Route
             exact
-            path="/entertainment"
+            path="/fashion"
             element={
               <News
                 setProgress={setProgress}
                 apiKey={apiKey}
-                key="entertainment"
+                key="fashion"
                 max={max}
                 country="ru"
-                category="entertainment"
-                viewCategory="развлечениях"
-              />
-            }
-          />
-          <Route
-            exact
-            path="/health"
-            element={
-              <News
-                setProgress={setProgress}
-                apiKey={apiKey}
-                key="health"
-                max={max}
-                country="ru"
-                category="health"
-                viewCategory="медицине"
-              />
-            }
-          />
-          <Route
-            exact
-            path="/science"
-            element={
-              <News
-                setProgress={setProgress}
-                apiKey={apiKey}
-                key="science"
-                max={max}
-                country="ru"
-                category="science"
-                viewCategory="науке"
-              />
-            }
-          />
-          <Route
-            exact
-            path="/sports"
-            element={
-              <News
-                setProgress={setProgress}
-                apiKey={apiKey}
-                key="sports"
-                max={max}
-                country="ru"
-                category="sports"
-                viewCategory="спорте"
-              />
-            }
-          />
-          <Route
-            exact
-            path="/technology"
-            element={
-              <News
-                setProgress={setProgress}
-                apiKey={apiKey}
-                key="technology"
-                max={max}
-                country="ru"
-                category="технологиях"
+                category="fashion"
+                viewCategory="моде"
               />
             }
           />

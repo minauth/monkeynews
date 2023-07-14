@@ -17,7 +17,7 @@ const News = (props) => {
   const updateNews = async () => {
     props.setProgress(10);
     //const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page}&pagesize=${props.pagesize}`;
-    const url = `https://gnews.io/api/v4/top-headlines?country=${props.country}&category=${props.category}&apikey=${props.apiKey}&lang=ru&page=${page}&max=${props.max}`;
+    const url = `https://gnews.io/api/v4/search?country=${props.country}&q=${props.category}&apikey=${props.apiKey}&lang=ru&page=${page}&max=${props.max}`;
     setLoading(true);
     let data = await fetch(url);
     props.setProgress(30);
@@ -30,7 +30,7 @@ const News = (props) => {
   };
 
   useEffect(() => {
-    document.title = `${capitalizeFirstLetter(props.category)} - NewsMonkey`;
+    document.title = `${capitalizeFirstLetter(props.category)} - CosmoNews`;
     updateNews();
     // eslint-disable-next-line
   }, []);
@@ -55,7 +55,7 @@ const News = (props) => {
         className="text-center"
         style={{ margin: "35px 0px", marginTop: "90px" }}
       >
-        NewsMonkey - Главные новости о {capitalizeFirstLetter(props.viewCategory)}
+        CosmoNews - Главные новости о {capitalizeFirstLetter(props.viewCategory)}
       </h1>
       {loading && <Spinner />}
       <InfiniteScroll

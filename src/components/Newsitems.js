@@ -43,7 +43,7 @@ const Newsitems = (props) => {
             rel="noreferrer"
             target="_blank"
             href={newsUrl}
-            className="btn btn-sm btn-dark"
+            className="btn btn-sm btn-light bg-pink text-light"
           >
             Подробнее
           </a>

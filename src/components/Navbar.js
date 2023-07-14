@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <div>
-      <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+      <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-pink">
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
-            NewsMonkey
+            CosmoNews
           </Link>
           <button
             className="navbar-toggler"
@@ -24,38 +24,18 @@ const Navbar = () => {
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <Link className="nav-link " aria-current="page" to="/">
-                  Главная
+                  Косметика
                 </Link>
               </li>
 
               <li className="nav-item">
-                <Link className="nav-link" to="/business">
-                  Бизнес
+                <Link className="nav-link" to="/beauty">
+                  Красота
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/entertainment">
-                  Развлечения
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/health">
-                  Медицина
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/science">
-                  Наука
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/sports">
-                  Спорт
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/technology">
-                  Технологии
+                <Link className="nav-link" to="/fashion">
+                  Мода  
                 </Link>
               </li>
             </ul>
