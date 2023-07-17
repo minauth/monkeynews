@@ -3,21 +3,23 @@ import Newsitems from "./Newsitems";
 import Spinner from "./Spinner";
 import PropTypes from "prop-types";
 import InfiniteScroll from "react-infinite-scroll-component";
+import Search from "./Search";
 
 const News = (props) => {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
   const [totalResults, setTotalResults] = useState(0);
+  const [query, setQuery] = useState(props.category);
 
   const capitalizeFirstLetter = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
   };
 
   const updateNews = async () => {
+    console.log(query);
     props.setProgress(10);
-    //const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page}&pagesize=${props.pagesize}`;
-    const url = `https://gnews.io/api/v4/search?country=${props.country}&q=${props.category}&apikey=${props.apiKey}&lang=ru&page=${page}&max=${props.max}`;
+    const url = `https://gnews.io/api/v4/search?country=${props.country}&q=${query}&apikey=${props.apiKey}&lang=ru&page=${page}&max=${props.max}`;
     setLoading(true);
     let data = await fetch(url);
     props.setProgress(30);
@@ -33,15 +35,13 @@ const News = (props) => {
     document.title = `${capitalizeFirstLetter(props.category)} - CosmoNews`;
     updateNews();
     // eslint-disable-next-line
-  }, []);
+  }, [query]);
 
   const fetchMoreData = async () => {
     //const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=4286247ac7744883979028c9e39ff19f&page=${page+1}&pagesize=${props.pagesize}`;
-    const url = `https://gnews.io/api/v4/top-headlines?country=${
+    const url = `https://gnews.io/api/v4/search?country=${
       props.country
-    }&category=${props.category}&apikey=8aee70befef526833fc9c30cc4340780&page=${
-      page + 1
-    }&max=${props.max}`;
+    }&q=${query}&apikey=${props.apiKey}&page=${page + 1}&max=${props.max}`;
     setPage(page + 1);
     let data = await fetch(url);
     let parsedData = await data.json();
@@ -53,10 +53,12 @@ const News = (props) => {
     <>
       <h1
         className="text-center"
-        style={{ margin: "35px 0px", marginTop: "90px" }}
+        style={{ margin: "35px 0px", marginTop: "30px" }}
       >
-        CosmoNews - Главные новости о {capitalizeFirstLetter(props.viewCategory)}
+        {/* CosmoNews - Главные новости о{" "} */}
+        {/* {capitalizeFirstLetter(props.viewCategory)} */}
       </h1>
+      <Search setQuery={setQuery} setPage={setPage} />
       {loading && <Spinner />}
       <InfiniteScroll
         dataLength={articles.length}
