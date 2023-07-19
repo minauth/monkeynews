@@ -38,7 +38,6 @@ const News = (props) => {
   }, [query]);
 
   const fetchMoreData = async () => {
-    //const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=4286247ac7744883979028c9e39ff19f&page=${page+1}&pagesize=${props.pagesize}`;
     const url = `https://gnews.io/api/v4/search?country=${
       props.country
     }&q=${query}&apikey=${props.apiKey}&page=${page + 1}&max=${props.max}`;
@@ -50,14 +49,7 @@ const News = (props) => {
   };
 
   return (
-    <>
-      <h1
-        className="text-center"
-        style={{ margin: "35px 0px", marginTop: "30px" }}
-      >
-        {/* CosmoNews - Главные новости о{" "} */}
-        {/* {capitalizeFirstLetter(props.viewCategory)} */}
-      </h1>
+    <div className="mt-4">
       <Search setQuery={setQuery} setPage={setPage} />
       {loading && <Spinner />}
       <InfiniteScroll
@@ -85,7 +77,7 @@ const News = (props) => {
           </div>
         </div>
       </InfiniteScroll>
-    </>
+    </div>
   );
 };
 

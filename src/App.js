@@ -5,14 +5,14 @@ import News from "./components/News";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import LoadingBar from "react-top-loading-bar";
-import Search from "./components/Search";
+import History from "./components/About/History";
+import Production from "./components/About/Production";
 
 const App = () => {
   const max = 10;
   const apiKey = process.env.REACT_APP_NEWS_API;
 
   const [progress, setProgress] = useState(0);
-  const [query, setQuery] = useState("");
 
   return (
     <Router>
@@ -63,6 +63,20 @@ const App = () => {
                 category="fashion"
                 viewCategory="моде"
               />
+            }
+          />
+          <Route
+            exact
+            path="/about/history"
+            element={
+              <History />
+            }
+          />
+          <Route
+            exact
+            path="/about/production"
+            element={
+              <Production />
             }
           />
         </Routes>

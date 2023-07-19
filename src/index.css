@@ -1,6 +1,21 @@
 body {
-    background-color: rgb(255, 210, 218);
+    background: #ffd2d9;
+    font-family: 'Roboto', sans-serif;
 }
+
 .bg-pink {
-    background-color: rgb(255, 149, 167);
-}   
+    background: #ff95a7;
+
+}
+
+.bg-grey {
+    background-color: #f8f9fa;
+}
+
+.text-blue {
+    color: #036bbc;
+}
+
+.article {
+    padding: 10px 30px;
+}

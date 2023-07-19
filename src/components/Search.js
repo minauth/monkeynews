@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import News from "./News";
 
 const Search = ({ setQuery, setPage }) => {
   const [inputText, setInputText] = useState("");
@@ -27,7 +26,7 @@ const Search = ({ setQuery, setPage }) => {
           type="text"
           className="form-control fs-5"
         />
-        <button onClick={handleButtonClick} className={`btn text-light fs-5 bg-pink`}>
+        <button onClick={handleButtonClick} className="btn text-light fs-5 bg-pink px-4">
           Поиск
         </button>
       </form>
