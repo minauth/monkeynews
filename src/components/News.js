@@ -4,6 +4,7 @@ import Spinner from "./Spinner";
 import PropTypes from "prop-types";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Search from "./Search";
+import ScrollToTopButton from "./ScrollToTop";
 
 const News = (props) => {
   const [articles, setArticles] = useState([]);
@@ -77,6 +78,7 @@ const News = (props) => {
           </div>
         </div>
       </InfiniteScroll>
+      <ScrollToTopButton />
     </div>
   );
 };

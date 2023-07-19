@@ -1,6 +1,7 @@
 import React from "react";
 import ModalImage from "react-modal-image";
 import Contacts from "./Contacts";
+import ScrollToTopButton from "../ScrollToTop";
 
 const History = () => {
   return (
@@ -106,6 +107,7 @@ const History = () => {
           </div>
         </div>
       </div>
+      <ScrollToTopButton />
     </body>
   );
 };
